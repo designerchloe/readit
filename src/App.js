@@ -8,6 +8,7 @@ import Searchbar from './components/searchbar';
 import Logo from './assets/logo.png';
 
 function App() {
+
   return (
     <div className="page-container">
       <nav>

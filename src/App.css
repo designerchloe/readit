@@ -57,6 +57,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 75%;
+  gap: 24px;
 }
 
 .post-container {
