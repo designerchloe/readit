@@ -47,7 +47,7 @@ body {
   clear: both;
   background: linear-gradient(#232323, #323232);
   width: 100%;
-  padding: 44px;
+  padding: 24px 44px 44px 44px;
   display: flex;
   flex-direction: column;
   gap: 24px;
@@ -78,6 +78,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
+  justify-content: space-between;
   gap: 24px;
 }
 
@@ -90,6 +91,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  width: 90%;
 }
 
 .post-metadata {
@@ -141,6 +143,8 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 88px;
+  gap: 8px;
 }
 
 .comment-metadata span.link, .post-metadata span.link, .link {
@@ -216,6 +220,7 @@ button {
 .search-form {
     display: flex;
     width: 30%;
+    min-width: 360px;
 }
 
 nav {
@@ -226,8 +231,69 @@ nav {
 
 .logo {
   position: absolute;
-  top: 48px;
+  top: 28px;
   left: 40px;
   width: 96px;
   height: fit-content;
+}
+
+@media screen and (max-width: 1200px){
+  .content-container {
+    flex-direction: column-reverse;
+  }
+
+  .posts-container {
+    width: 100%;
+  }
+
+  .genres-container {
+    width: 100%;
+    flex-direction: row;
+    overflow: scroll;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  nav {
+    justify-content: space-between;
+  }
+  
+  .logo {
+    position: static;
+    width: 96px;
+    height: fit-content;
+  }
+}
+
+@media screen and (max-width: 900px) {
+
+  .page-container {
+    padding: 20px;
+  }
+
+  .post-container {
+    flex-direction: column;
+    padding: 12px;
+  }
+
+  .post-img {
+    width: 100%;
+  }
+
+  .post-main-content-container {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .search-form {
+    min-width: 100%;
+  }
 }
