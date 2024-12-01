@@ -1,13 +1,35 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit';
 
-// const fetchPost = createAsyncThunk(
-//     'posts/fetchPost',
-//     async (postId) => {
-//       const users = await fetch(`api/users${userId}`)
-//       const data = await users.json()
-//       return data
-//     }
-//   );
+const endpoint = 'https://www.reddit.com/r/books.json';
+
+// function fetchAllData() {
+//  fetch(endpoint, {cache: 'no-cache'}).then(response => {
+//     if (response.ok) {
+//         return response.json();
+//       }
+//       throw new Error('Request failed!');
+//     }, networkError => {
+//         console.log(networkError.message);
+//     })
+// };
+
+export const fetchPost = createAsyncThunk(
+    'posts/fetchPost',
+    async () => {
+      const allData = await fetch(endpoint, {cache: 'no-cache'}).then(response => {
+        if (response.ok) {
+            return response.json();
+          }
+          throw new Error('Request failed!');
+        }, networkError => {
+            console.log(networkError.message);
+        });
+      console.log(allData);
+      return allData;
+    }
+  )
+
+
 
 const postData = {
     children: [
@@ -37,11 +59,25 @@ const postsSlice = createSlice({
     initialState: {
         postCount: 0,
         posts: postData.children,
+        allData: []
     },
     reducers: {
         log: (state, action) => {
             console.log(action.payload);
         }
+    },
+    extraReducers: {
+        [fetchPost.pending]: (state, action) => {
+            console.log('pending!')
+          },
+          [fetchPost.fulfilled]: (state, action) => {
+            state.allData.push(action.payload);
+            console.log('fulfilled!')
+          },
+          [fetchPost.rejected]: (state, action) => {
+            console.log('rejected')
+          }
+
     }
 });
 
