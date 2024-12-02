@@ -42,7 +42,6 @@ const postsSlice = createSlice({
             state.hasError = false;
             action.payload.map(post => {
                 state.posts.push(post);
-                console.log(post)
             })
           },
           [fetchPost.rejected]: (state, action) => {

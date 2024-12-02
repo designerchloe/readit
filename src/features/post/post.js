@@ -16,7 +16,7 @@ function Post(props) {
 
     return (
         <div className="post-container">
-            <img className="post-img" src={BookImg} />
+            <img className="post-img" src={props.image} />
             <div className="post-main-content-container">
                 <div className="post-top-content-container">
                     <div className="post-text" >

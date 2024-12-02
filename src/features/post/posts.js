@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Post from './post';
 import {selectPosts} from './postsSlice';
 import {fetchPost} from './postsSlice';
+import { finalImages } from './postImages';
 
 function Posts() {
     const dispatch = useDispatch();
@@ -19,13 +20,14 @@ function Posts() {
     return (
         <div className="posts-container">
             {
-                posts.map(post => {
+                posts.map((post, index) => {
                     return <Post 
                     author={post.data.author} 
                     title={post.data.title}
                     text={post.data.selftext}
                     created={post.data.created_utc}
-                    score={post.data.score} />
+                    score={post.data.score}
+                    image={finalImages[index]} />
                 })
             }
         </div>

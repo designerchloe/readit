@@ -76,7 +76,10 @@ body {
 .post-img {
   width: 40%;
   border-radius: 8px;
-  height: fit-content;
+  min-height: 260px;
+  max-height: 400px;
+  object-fit: cover; 
+  object-position: center; 
 }
 
 .post-main-content-container {

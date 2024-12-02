@@ -9,8 +9,6 @@ import Logo from './assets/logo.png';
 
 function App() {
 
-  console.log('rendering-app');
-
   return (
     <div className="page-container">
       <nav>
