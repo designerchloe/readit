@@ -16,6 +16,7 @@ export const fetchPost = createAsyncThunk(
             const allPosts = jsonResponse.data.children;
             return allPosts;
         });
+        //console.log(allData);
         return allData;
     }
 );

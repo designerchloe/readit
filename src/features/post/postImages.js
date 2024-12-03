@@ -39,7 +39,6 @@ function shuffleImages() {
         shuffledImages.push(copiedImages[rand]);
         copiedImages.splice(rand, 1);
     }
-    console.log(shuffledImages);
     return shuffledImages;
 };
 

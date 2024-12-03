@@ -76,8 +76,7 @@ body {
 .post-img {
   width: 40%;
   border-radius: 8px;
-  min-height: 260px;
-  max-height: 400px;
+  max-height: 400px; 
   object-fit: cover; 
   object-position: center; 
 }
@@ -86,7 +85,7 @@ body {
   display: flex;
   flex-direction: column;
   width: 60%;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   gap: 24px;
 }
 
@@ -151,8 +150,9 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 88px;
+  height: 100%;
   gap: 8px;
+  justify-content: flex-end;
 }
 
 .comment-metadata span.link, .post-metadata span.link, .link {
@@ -167,9 +167,9 @@ button {
 
 .comments-cover {
   position: absolute;
-  top: 0px;
+  bottom: 0px;
   left: 0;
-  height: 100%;
+  height: 50%;
   width: 100%;
   background: linear-gradient(rgba(59,59,59,0), rgba(59,59,59,1) 90%);
 }
@@ -183,6 +183,7 @@ button {
   gap: 24px;
   width: 25%;
   height: fit-content;
+  position: sticky;
 }
 
 .genre-container {
@@ -200,6 +201,7 @@ button {
 .content-container {
   display: flex;
   gap: 24px;
+  overflow: hidden
 }
 
 .search-input {

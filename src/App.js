@@ -21,6 +21,15 @@ function App() {
         <div className="genres-container">
           <h3>Genres</h3>
           <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
+          <Genre />
         </div>
       </div>
     </div>

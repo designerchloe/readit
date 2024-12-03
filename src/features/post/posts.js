@@ -27,7 +27,10 @@ function Posts() {
                     text={post.data.selftext}
                     created={post.data.created_utc}
                     score={post.data.score}
-                    image={finalImages[index]} />
+                    image={finalImages[index]}
+                    numComments={post.data.num_comments}
+                    id={post.data.id}
+                    permalink={post.data.permalink} />
                 })
             }
         </div>

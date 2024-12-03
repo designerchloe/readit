@@ -1,8 +1,15 @@
+import React, {useEffect, useState} from 'react';
 import Vote from '../../components/vote';
 import BookImg from '../../assets/book-img.png';
 import Comments from '../comments/comments';
+import { useDispatch } from 'react-redux';
+import {fetchCommentstByPostId} from '../comments/commentsSlice';
 
 function Post(props) {
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(fetchCommentstByPostId(props.permalink));
+    }, [dispatch]);
 
     //Description text formatting
     const selfText = props.text;
@@ -30,7 +37,7 @@ function Post(props) {
                     <Vote score={props.score} />
                 </div>
                 <div className="rule" ></div>
-                <Comments />
+                <Comments numComments={props.numComments} />
             </div>
             
         </div>
